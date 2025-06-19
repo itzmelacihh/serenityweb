@@ -1,0 +1,65 @@
+/* Alapértelmezett stílusok */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Lebegő animációk */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes float-delay {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes float-slow {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-16px);
+    }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delay {
+    animation: float-delay 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Másolás gomb hover animáció */
+button:hover i.fa-copy {
+    color: #F2C94C;
+    transition: color 0.3s ease;
+}
+
+/* Responsive fallback, ha a Tailwind nem lenne elérhető */
+@media screen and (max-width: 768px) {
+    header nav {
+        display: none;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
