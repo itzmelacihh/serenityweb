@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serenity - Karbantartás</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0e0d0e;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .container {
+      background-color: #1e1e1e;
+      border-radius: 15px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0, 170, 255, 0.2);
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+
+      background: linear-gradient(90deg, #00aaff, #75a3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      animation: pulseGlow 2.5s ease-in-out infinite;
+      margin-bottom: 10px;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        text-shadow:
+          0 0 8px #00416199,
+          0 0 16px #0077cc,
+          0 0 24px #004488;
+      }
+      50% {
+        text-shadow:
+          0 0 2px #00aaff33,
+          0 0 4px #0077cc44,
+          0 0 8px #00448844;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: #cccccc;
+      margin: 6px 0;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #888;
+    }
+
+    .discord-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 16px;
+      color: #00aaff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .discord-link:hover {
+      color: #66ccff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="serenitylogo.png" alt="serenitylogo" class="logo">
+
+    <h1>Karbantartás alatt</h1>
+    <p>🛠️ Weboldalunk jelenleg karbantartás alatt áll. 🛠️ </p>
+    <p class="quote">Nézz vissza később</p>
+    <a href="https://dc.gg/serenity" target="_blank" class="discord-link">🔗 Discord: dc.gg/serenity</a>
+  </div>
+
+</body>
+</html>
