@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+</head>
+
+<body class="bg-gradient-to-b from-gray-900 via-black to-gray-800 text-white min-h-screen">
+
+    <!-- Navbar -->
+    <header class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-11/12 max-w-7xl">
+        <div class="rounded-full bg-black/50 backdrop-blur-lg px-6 py-3 shadow-lg">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="assets/logo.png" alt="ser Logo" class="h-10">
+                    <span class="ml-3 text-lg font-bold text-cyan-200">Serenity</span>
+                </div>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a href="#home" class="text-sm text-gray-300 hover:text-blue-300 transition-colors">Kezdőlap</a>
+                    <a href="#join" class="text-sm text-gray-300 hover:text-blue-300 transition-colors">Csatlakozás</a>
+                    <a href="#community" class="text-sm text-gray-300 hover:text-blue-300 transition-colors">Közösség</a>
+                    <a href="#kapcsolat" class="text-sm text-gray-300 hover:text-blue-300 transition-colors">Kapcsolat</a>
+                    <a href="serenityshop.html" class="text-sm text-gray-300 hover:text-blue-300 transition-colors">Serenity Shop</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <!-- Player Count -->
+                    <div id="player-count-container" class="bg-transparent outline outline-purple-500 px-4 py-2 rounded-full text-sm text-white">
+                        <span class="text-purple-400" id="player-count">-</span> online játékos
+                    </div>
+                    <a href="" target="_blank" rel="noopener noreferrer" >
+                        <button class="bg-gradient-to-r from-[#CEF7FF] to-[#577786] hover:bg-black text-white px-5 py-2 rounded-full">Bejelentkezés</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="relative mt-32 mb-16 z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left side: Image with floating elements -->
+        <div class="order-2 lg:order-1 relative" data-aos="fade-up" data-aos-delay="200">
+            <div class="relative">
+                <img src="assets/logo.png" alt="ser Logo" class="w-[600px] h-auto mx-auto lg:mx-0 relative z-10">
+                
+                <!-- Floating elements around the logo -->
+            </div>
+        </div>
+        
+        <!-- Right side: Text content -->
+        <div class="order-1 lg:order-2 text-center lg:text-left" data-aos="fade-left" data-aos-delay="200">
+            <div class="inline-block px-4 py-1 mb-5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm rounded-full mb-4" data-aos="fade-down" data-aos-delay="300">
+                <p class="text-cyan-400 text-sm font-medium">Tekintsd meg szerverünket, és éld át a legjobbakat.</p>
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                <span class="bg-gradient-to-r from-blue-400 via-white-400 to-cyan-500 bg-clip-text text-transparent">Kapcsolódj ki. Játssz. Élvezd.</span>
+                <span class="block text-white mt-2">A Serenity Csak Rád Vár!</span>
+            </h1>
+            
+            <p class="text-lg text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0">
+                Csatlakozz Magyarország egyik legegyedibb minecraft szerveréhez, a Serenity-hez. Éld át velünk a kalandot, és oszd meg a társaiddal. A béke unalmas, itt harcolni fogsz!
+            </p>
+            
+            <!-- CTA buttons with hover effects -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                
+                <a href="#join" 
+                   class="group relative overflow-hidden bg-black/30 backdrop-blur-sm border-2 border-blue-500/50 text-lg px-8 py-4 rounded-xl shadow-lg transform transition-all hover:scale-105" 
+                   data-aos="fade-up" data-aos-delay="800">
+                    <span class="relative z-10 flex items-center justify-center gap-2 text-white">
+                        Csatlakozás
+                    </span>
+                    <span class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-magenta-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                </a>
+            </div>
+            
+            <!-- Server address with copy button -->
+            <div class="mt-8 inline-flex items-center gap-3 bg-black/30 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2" data-aos="fade-up" data-aos-delay="1000">
+                <span class="text-gray-300">Szerver IP:</span>
+                <span class="font-mono text-cyan-500 font-bold">play.serenity.hu</span>
+                <button class="text-gray-400 hover:text-white transition-colors" onclick="navigator.clipboard.writeText('play.serenity.hu')">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section id="join" class="relative py-16 text-white bg-gradient-to-b from-[##CEF7FF] via-gray-900 to-gray-800">
+    
+        <div class="absolute top-0 left-0 w-full z-10">
+            <svg class="w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 300" fill="none" data-aos="fade-up">
+                <defs>
+                    <pattern id="join-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <circle cx="3" cy="3" r="2" fill="#555"></circle>
+                    </pattern>
+                </defs>
+                <path d="M0 300C150 250 300 200 600 220C900 240 1200 320 1500 280C1800 240 1920 180 1920 180V0H0V300Z"
+                    fill="url(#join-pattern)"></path>
+            </svg>
+        </div>
+    
+        <div class="relative z-20 mt-48 container mx-auto text-center">
+            <h2 class="text-4xl font-extrabold text-blue-400 mb-16" data-aos="fade-right" data-aos-delay="200">Csatlakozás Lépésekben</h2>
+    
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="relative p-8 bg-gray-900 rounded-lg shadow-lg border border-gray-700" data-aos="fade-up" data-aos-delay="400">
+                    <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-b from-[#CEF7FF] to-[#577786] text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Minecraft Megnyitása</h3>
+                    <p class="text-gray-300">Ahhoz, hogy csatlakozhass, el kell indítanod <br /> egy minecraft klienst, ez lehet akár <a rel="no peer noreferrer" target="_blank" class="text-blue-400" href="https://tlauncher.org/en/">TLauncher</a> is. <br /> Szerververzió: <a class="text-blue-400">1.20.1 - 1.21.4</a></p>
+                </div>
+
+                <div class="relative p-8 bg-gray-900 rounded-lg shadow-lg border border-gray-700" data-aos="fade-up" data-aos-delay="800">
+                    <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-b from-[#CEF7FF] to-[#577786] text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Csatlakozás</h3>
+                    <p class="text-gray-300">A szerverlistához add hozzá a <b class="text-blue-500">play.serenity.hu</b> IP címet, majd csatlakozz fel.</p>
+                </div>
+
+                <div class="relative p-8 bg-gray-900 rounded-lg shadow-lg border border-gray-700" data-aos="fade-up" data-aos-delay="600">
+                    <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-b from-[#CEF7FF] to-[#577786] text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Regisztrálás</h3>
+                    <p class="text-gray-300">Amint csatlakoztál, a játéban regisztrálnod kell a <a class="text-blue-500">/register (jelszó) (jelszó mégegyszer)</a> paranccsal. A következő belépéseknél a<a class="text-blue-500">/login (jelszavad)</a> parancsot kell használnod.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="help" class="relative py-24 text-white">
+    
+        <div class="relative z-10 container mx-auto text-center">
+            <p class="text-lg text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+                Ha elakadtál a belépésben, vagy csak egyéb problémád van, lépj velünk kapcsolatba az <a class="text-blue-500">info@serenity.hu</a> E-Mail címen.
+            </p>
+        </div>
+    </section>
+    <section id="shop" class="relative py-36 text-white">
+    
+        <div class="relative z-10 container mx-auto">
+            <div class="relative bg-cover bg-center bg-no-repeat rounded-xl shadow-2xl max-w-6xl mx-auto overflow-hidden border-4 border-[#333]"
+                 style="background-image: url('./background.png'); height: 400px;" data-aos="fade-up" data-aos-delay="200">
+                <div class="absolute inset-0 bg-black/60"></div>
+    
+                <div class="relative z-10 flex h-full">
+                    <div class="w-1/2 flex flex-col justify-center items-start px-12" data-aos="fade-right" data-aos-delay="400">
+                        <h2 class="text-6xl font-bold text-blue-400 mb-6">Ki akarsz tűnni a közösségből?</h2>
+                        <p class="text-lg text-gray-300 mb-8">
+                            Vásárolj menő rangokat és egyéb kiegészítőket a boltunkban. Használd a szerveren a <b class="text-blue-500">/bolt</b> parancsot.
+                        </p>
+            <div class="mt-8 inline-flex items-center gap-3 bg-black/30 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2" data-aos="fade-up" data-aos-delay="1000">
+                <span class="text-gray-300">Vásárlás:</span>
+                <span class="font-mono text-cyan-500 font-bold">/bolt</span>
+                <button class="text-gray-400 hover:text-white transition-colors" onclick="navigator.clipboard.writeText('/bolt')">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+                    </div>
+                    <div class="w-1/2" data-aos="fade-left" data-aos-delay="600"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="community" class="relative py-36 text-white">
+    
+        <div class="relative z-10 container mx-auto grid md:grid-cols-2 items-center gap-12">
+            <div class="flex justify-center" data-aos="fade-right" data-aos-delay="200">
+                <img src="assets/logo.png" alt="MineSun Logo" class="w-3/4 max-w-md">
+            </div>
+    
+            <div class="text-center md:text-left" data-aos="fade-left" data-aos-delay="400">
+                <h2 class="text-6xl font-bold text-blue-400 mb-6">Beszélgess Játékosainkkal!</h2>
+                <p class="text-lg text-gray-300 mb-8">
+                    Szeretnél a játékostársaiddal beszélgetni, hogy még tovább fejlődjön <br>a kapcsolatotok? Erre is nyújtunk lehetőséget, íme a discord szerverünk.
+                </p>
+    
+                <div class="flex justify-center md:justify-start">
+                    <a href="https://dsc.gg/serenityhu" class="flex items-center gap-4 bg-gray-900 border border-cyan-400 hover:border-blue-600 hover:bg-black-900 rounded-lg px-6 py-4 transition-colors">
+                        <img src="assets/discord.png" alt="Discord" class="w-8 h-8">
+                        <span class="text-lg font-bold text-blue-500">Discord Szerverünk</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="kapcsolat" class="relative bg-gradient-to-b from-gray-900 via-black to-gray-800 text-gray-300 py-16">
+        <div class="absolute top-0 left-0 w-full">
+            <div class="h-1 bg-gradient-to-r from-cyan-600 via-blue-500 to-blue-700 shadow-lg" data-aos="fade-down"></div>
+        </div>
+    
+    
+        <div class="relative container mx-auto grid md:grid-cols-4 gap-12 z-10">
+    
+            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                <h3 class="text-lg font-bold text-blue-400 mb-4">Fontos Dokumentumok</h3>
+                <ul class="space-y-2 text-center text-sm">
+                    <li><a href="dokumentumok/aszf.pdf" class="hover:text-cyan-300 transition-colors">Általános Szerződési Feltételek</a></li>
+                    <li><a href="dokumentumok/at.pdf" class="hover:text-cyan-300 transition-colors">Adatvédelmi Tájékoztató</a></li>
+                </ul>
+            </div>
+    
+            <div class="text-center" data-aos="fade-up" data-aos-delay="600">
+                <h3 class="text-lg font-bold text-blue-400 mb-4">Elérhetőségek</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>
+                        <strong>Discord:</strong> <a href="https://dsc.gg/serenityhu" class="hover:text-purple-500 transition-colors">dsc.gg/serenityhu</a>
+                    </li>
+                    <li>
+                        <strong>E-Mail:</strong> <a href="" class="hover:text-yellow-300 transition-colors"><span class="__cf_email__" data-cfemail="345d5a525b74595d5a5147415a1a5c41">info@serenity.hu</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="mt-12 border-t border-gray-700 pt-5 text-center text-sm text-gray-500 relative z-10" data-aos="fade-up" data-aos-delay="600">
+            2025 Serenity © Minden jog fenntartva.
+        </div>
+    </footer>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function fetchOnlinePlayers() {
+            $.get("https://api.mcsrvstat.us/3/emerald.magmanode.com:32760", function(data) {
+                if (data.online) {
+                    $("#player-count").text(`${data.players.online}`);
+                } else {
+                    $("#player-count").text("0");
+                }
+            }).fail(function() {
+                $("#player-count").text("Nincs kapcsolat");
+            });
+        }
+
+        $(document).ready(function() {
+            fetchOnlinePlayers();
+            setInterval(fetchOnlinePlayers, 30000);
+        });
+    </script>
+        <script>
+            AOS.init({
+                duration: 800, 
+                easing: 'ease-in-out', 
+                once: true, 
+            });
+        </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"951b7ac379380f7f","version":"2025.6.2","r":1,"token":"259df8cccb4f470c9761fd6fbd3701c5","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+</body>
+
+</html>
